@@ -22,4 +22,7 @@ jobs:
          java -version
          echo $JAVA_HOME
       - run: ./mvnw install
-      - uses: codecov/codecov-action@v1
+      - name: Téléverser les rapports de couverture vers Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
